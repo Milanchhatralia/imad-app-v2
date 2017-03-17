@@ -1,5 +1,5 @@
 console.log('Loaded!');
-var img = document.getElementbyId("madi");
+var img = document.getElementById("madi");
 var moveLeft = 0;
 function moveright() {
     moveLeft += 1;
