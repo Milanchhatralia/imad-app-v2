@@ -1,6 +1,6 @@
 //counter code
 var button = document.getElementById('button');
-button.onclick = function (){
+button.onclick = function(){
     //Create a request to the counter endpoint 
     var request = new XMLHttpRequest();
   
@@ -23,7 +23,7 @@ button.onclick = function (){
 
 
 var submit = document.getElementById('submit-button');
-submit.onclick = function (){
+submit.onclick = function(){
     var request = new XMLHttpRequest();
   
     request.onreadystatechange = function(){
