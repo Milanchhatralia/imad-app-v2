@@ -27,30 +27,25 @@ submit.onclick = function(){
     var request = new XMLHttpRequest();
   
     request.onreadystatechange = function(){
-    if(request.readyState == XMLHttpRequest.DONE){
-        //Take action
-        if(request.status == 200){
-            var name = request.responceText;
-            name = JSON.parse(name);
-            var list = '';
-            for(var i=0;i < names.length;i++){
-                list += '<li>' + names[i] + '</li>';
+        if(request.readyState == XMLHttpRequest.DONE){
+            //Take action
+            if(request.status == 200){
+                var name = request.responceText;
+                name = JSON.parse(name);
+                var list = '';
+                for(var i=0;i < name.length;i++){
+                    list += '<li>' + name[i] + '</li>';
+                }
+                var ul = document.getElementById('ul');
+                ul.innerHTML = list;
             }
-            var ul = document.getElementById('ul');
-            ul.innerHTML = list;
         }
-    }
-    //Do nothing
-  };
+        //Do nothing
+    };
   
-  var nameInput = document.getElementById('name');
-  var names = nameInput.value;
-  //Make request 
-  request.open('GET','http://milanchhatralia.imad.hasura-app.io/submit-name?name=' + names, true);
-  request.send(null);
-    
-    
-    
-    
-    
+    var nameInput = document.getElementById('name');
+    var names = nameInput.value;
+    //Make request 
+    request.open('GET','http://milanchhatralia.imad.hasura-app.io/submit-name?name=' + names, true);
+    request.send(null);
 };
