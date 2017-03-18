@@ -30,11 +30,11 @@ submit.onclick = function(){
         if(request.readyState == XMLHttpRequest.DONE){
             //Take action
             if(request.status == 200){
-                var name = request.responceText;
-                name = JSON.parse(name);
+                var names = request.responceText;
+                names = JSON.parse(names);
                 var list = '';
                 for(var i=0;i < name.length;i++){
-                    list += '<li>' + name[i] + '</li>';
+                    list += '<li>' + names[i] + '</li>';
                 }
                 var ul = document.getElementById('ul');
                 ul.innerHTML = list;
@@ -44,8 +44,8 @@ submit.onclick = function(){
     };
   
     var nameInput = document.getElementById('name');
-    var names = nameInput.value;
+    var name = nameInput.value;
     //Make request 
-    request.open('GET','http://milanchhatralia.imad.hasura-app.io/submit-name?name=' + names, true);
+    request.open('GET','http://milanchhatralia.imad.hasura-app.io/submit-name?name=' + name, true);
     request.send(null);
 };
