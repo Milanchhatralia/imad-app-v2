@@ -26,7 +26,7 @@ var submit = document.getElementById('submit-button');
 submit.onclick = function () {
     var request = new XMLHttpRequest();
   
-    request.onreadystatechange = function(){
+    request.onreadystatechange = function () {
         if(request.readyState == XMLHttpRequest.DONE){
             //Take action
             if(request.status == 200){
@@ -46,6 +46,6 @@ submit.onclick = function () {
     var nameInput = document.getElementById('name');
     var name = nameInput.value;
     //Make request 
-    request.open('GET','http://milanchhatralia.imad.hasura-app.io/submit-name?name=' + name, true);
+    request.open('GET','http://milanchhatralia.imad.hasura-app.io/submit-name?name='+name, true);
     request.send(null);
 };
