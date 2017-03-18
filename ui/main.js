@@ -1,6 +1,5 @@
 //counter code
 var button = document.GetElementById('button');
-var span = document.GetElementById('span');
 button.onclick=function(){
     //Create a request to the counter endpoint 
     var request = new XMLHttpRequest();
@@ -10,6 +9,7 @@ button.onclick=function(){
         //Take action
         if(request.status == 200){
             var counter = request.responseText;
+            var span = document.GetElementById('span');
             span.innerHTML = counter.toString();
         }
     }
