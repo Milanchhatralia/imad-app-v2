@@ -126,7 +126,7 @@ app.get('/submit-name',function(req, res){
 app.get('/article/:articleName',function(req, res){
     //articleName = article-one
     //articles[articleName] = content object for aticle one
-    var articleName = req.params.articleName;
+    //var articleName = req.params.articleName;         over to server
     
     pool.query("SELECT * FROM article WHERE title = '"+ req.params.articleName + "'", function (err, result){
         if(err){
@@ -140,7 +140,7 @@ app.get('/article/:articleName',function(req, res){
             }
         }
     });
-    res.send(createTemplate(article[articleName]));
+    //res.send(createTemplate(article[articleName]));       over to server
 });
 
 app.get('/ui/style.css', function (req, res) {
