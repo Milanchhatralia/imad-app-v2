@@ -8,7 +8,7 @@ var config = {
     database: 'milanchhatralia',
     host: 'db.imad.hasura-app.io',
     port: '5432',
-    password: 'db-milanchhatralia-34008'
+    password: 'db-milanchhatralia-34008'  //
 };
 
 var app = express();
