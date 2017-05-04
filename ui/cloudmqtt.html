@@ -8,7 +8,7 @@
 	
 	
 	function pubmsg(){
-	    	message = new Paho.MQTT.Message("84.00");
+	    	message = new Paho.MQTT.Message("1");
 	    	message.destinationName = "/checktds";
 	    	client.send(message);
 	    	console.log(message);
